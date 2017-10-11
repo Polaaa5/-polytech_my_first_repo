@@ -1,2 +1,6 @@
 MOV A, 5
 MOV B, 7
+
+MOV C, B
+MOV B, A
+MOV A, C
