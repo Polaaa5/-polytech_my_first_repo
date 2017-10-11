@@ -1,6 +1,22 @@
+1:
 MOV A, 5
 MOV B, 7
-
+2:
+MOV A, 5
+MOV B, 7
 MOV C, B
 MOV B, A
 MOV A, C
+
+3:
+JMP START
+RAM:
+DB 5
+DB 7
+START:
+MOV C, RAM
+SUMMA:
+MOV A, [C]
+INC C
+MOV B, [C]
+ADD A, B
