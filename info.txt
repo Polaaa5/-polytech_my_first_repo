@@ -49,13 +49,15 @@ print:			; print(C:*from, D:*to)
 	RET
 
 5:
-jmp start
-db 4
-start:
-mov a, 4
-mov b, a
-chislo:
-DEC B
-MUL B
-CMP B,1
+jmp start 
+RAM:
+db 4 
+start: 
+mov c, RAM 
+mov a,[c]
+mov b, [c] 
+chislo: 
+DEC B 
+MUL B 
+CMP B,1 
 JNE chislo
