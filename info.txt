@@ -22,31 +22,31 @@ MOV B, [C]
 ADD A, B
 
 4:
-	JMP start
+JMP start
 hello: DB "05/07!" ; Variable
-       DB 0	; String terminator
+DB 0	
 
 start:
-	MOV C, hello    ; Point to var 
-	MOV D, 232	; Point to output
-	CALL print
-        HLT             ; Stop execution
+MOV C, hello     
+MOV D, 232	
+CALL print
+HLT             
 
-print:			; print(C:*from, D:*to)
-	PUSH A
-	PUSH B
-	MOV B, 0
+print:			
+PUSH A
+PUSH B
+MOV B, 0
 .loop:
-	MOV A, [C]	; Get char from var
-	MOV [D], A	; Write to output
-	INC C
-	INC D  
-	CMP B, [C]	; Check if end
-	JNZ .loop	; jump if not
+MOV A, [C]	
+MOV [D], A	
+INC C
+INC D  
+CMP B, [C]	
+JNZ .loop	
 
-	POP B
-	POP A
-	RET
+POP B
+POP A
+RET
 
 5:
 jmp start 
